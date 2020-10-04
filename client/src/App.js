@@ -1,8 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {emitMessage} from './api/api.js'
 
-function App() {
+function App(){
+  emitMessage("1", "testmsg");
   return (
     <div className="App">
       <header className="App-header">

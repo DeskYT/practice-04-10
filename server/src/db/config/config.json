@@ -2,9 +2,11 @@
   "development": {
     "username": "postgres",
     "password": "postgres",
-    "database": "seq_practice",
+    "database": "seq_chat",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "migrationStorage": "json",
+    "seederStorage": "json"
   },
   "test": {},
   "production": {}
