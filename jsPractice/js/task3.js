@@ -29,7 +29,13 @@ class User{
             if(this.money >= 15000) resolve("Yeah, u can do it now!")
             else reject("Not enough money!")
         })
-        const res = await flatBuyPromise;
+        let res;
+        try{
+            res = await flatBuyPromise;
+        }
+        catch (e) {
+            res = e
+        }
         return res;
     }
 }
