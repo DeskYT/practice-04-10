@@ -22,7 +22,7 @@ class User{
     constructor(name, surname, money) {
         this.name = name;
         this.surname = surname;
-        this.money = money
+        this.money = money;
     }
     async canBuyFlat(){
         const flatBuyPromise = new Promise((resolve, reject) => {
