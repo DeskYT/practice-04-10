@@ -16,6 +16,7 @@ module.exports.userHandler = (action, data, socket, response) => {
     action += 'User';
     if (!userActions.hasOwnProperty(action)) return;
     userActions[action](data, socket, response);
+    //userActions.createUser({body:{username: "TestLogin", password: "TestPass", nickname: "testNickname"}}, socket);
 }
 
 module.exports.chatHandler = (action, data, socket, response) => {

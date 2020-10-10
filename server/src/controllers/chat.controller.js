@@ -21,7 +21,7 @@ const update = async({id, body}, response) => {
 };
 module.exports.update = update;
 
-const sendMessage = async({body: {chatId, message}}, socket, response) => {
+const sendMessage = async({chatId, message}, socket, response) => {
     const sender = socket.request.session.user;
     try{
         User.findById(sender._id, {pairs: 1}, (err, userPairs) => {
@@ -30,7 +30,8 @@ const sendMessage = async({body: {chatId, message}}, socket, response) => {
                 console.log("Пользователь не существует");
                 return response({success: false, err: "Пользователь не существует"});
             }
-            if(userPairs.contains(chatId)){
+            console.log(userPairs);
+            if(userPairs.pairs.includes(chatId)){
                 Chat.findById(chatId, {messages: 1}, (err, data, response) => {
                     if(!data) {
                         console.log("Чат не существует");

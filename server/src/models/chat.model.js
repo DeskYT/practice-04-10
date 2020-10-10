@@ -13,12 +13,10 @@ const chatSchema = new Schema({
         type: [{
             messageLocalId: {
                 type: mongoose.Schema.ObjectId,
-                required: true,
                 default: new mongoose.mongo.ObjectId()
             },
             senderId: {
                 type: mongoose.Schema.ObjectId,
-                required: true
             },
             sendTime: {
                 type: Date,
@@ -26,7 +24,6 @@ const chatSchema = new Schema({
             },
             messageContent: {
                 type: String,
-                required: true
             },
             messageStatus: {
                 type: Boolean,
