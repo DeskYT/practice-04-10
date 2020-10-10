@@ -4,6 +4,8 @@ const User = require('./../models/user.model');
 const create = async(data, socket, response) => {
     try{
         console.log('ok')
+        data.owner = socker.request.session.user._id;
+        //const addedMsg = update(chatId, {$set: {messages: data}});
         const chat = new Chat(data);
         const newChat = await chat.save();
         console.log(newChat);
@@ -39,7 +41,7 @@ const sendMessage = async({chatId, message}, socket, response) => {
                     }
                     data.push(message);
                     //Chat.findByIdAndUpdate(chatId, {$set: {messages: data}})
-                    const addedMsg = updateChat(chatId, {$set: {messages: data}});
+                    const addedMsg = update(chatId, {$set: {messages: data}});
                     response(addedMsg);
                 })
             }

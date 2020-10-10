@@ -6,6 +6,10 @@ autoIncrement.initialize(connection);*/
 const Schema = mongoose.Schema;
 const chatSchema = new Schema({
     chatId: mongoose.Schema.ObjectId,
+    chatOwner: {
+        type: mongoose.Schema.ObjectId,
+        required: true;
+    },
     chatName: {
         type: String
     },
